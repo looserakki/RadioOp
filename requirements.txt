@@ -1,3 +1,4 @@
 git+https://github.com/Itsunknown-12/yt-dl@master
 pyrogram
 ffmpeg-python
+Pytgcalls
