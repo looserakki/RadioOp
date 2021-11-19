@@ -81,7 +81,7 @@ async def stream(client, m: Message):
         group_call = GroupCall(app, input_filename, path_to_log_file='')
         await group_call.start(chat_id)
         RADIO_CALL[chat_id] = group_call
-        await radiostrt.edit(f'STREAM_IMG, 📻 Started **[Live Streaming]({query})** in `{chat_id}`', disable_web_page_preview=True)
+        await radiostrt.edit(f' 📻 Started **[Live Streaming]({query})** in `{chat_id}`', disable_web_page_preview=True)
     
         
 @Client.on_message(filters.command("stop"))
@@ -98,6 +98,6 @@ async def stopradio(client, m: Message):
     if chat_id in RADIO_CALL:
         await RADIO_CALL[chat_id].stop()
         RADIO_CALL.pop(chat_id)
-        await smsg.edit(f'STOP_IMG,𝘿𝙚𝘾𝙤𝙙𝙚 𝙍𝙖𝙙𝙞𝙤**[Stopped Streaming]({query})**\n\n in `{chat_id}`',disable_web_page_preview=True)
+        await smsg.edit(f'𝘿𝙚𝘾𝙤𝙙𝙚 𝙍𝙖𝙙𝙞𝙤**Stopped Streaming**\n\n in `{chat_id}`',disable_web_page_preview=True)
     else:
         await smsg.edit(f'`Nothing is Streaming!`')
